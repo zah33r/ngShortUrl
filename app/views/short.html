@@ -1,0 +1,43 @@
+<!--<p>This is the short view.</p>-->
+
+
+<div ng-controller="ShortCtrl as sc">
+
+    <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding>
+        <div id="popupContainer" class="check-element animate-show">
+            <section layout="row" layout-sm="column" layout-align="center center">
+                <md-input-container>
+                    <label>Enter complete url here</label>
+                    <input ng-model="longUrl" value="{{longUrl}}" size="100" type=text autofocus>
+                </md-input-container>
+            </section>
+            <section layout="row" layout-sm="column" layout-align="center center">
+                <md-button class="md-raised md-primary" ng-click="showAlert($event); getShortUrl(); getUrlLength()">Make it Short</md-button>
+            </section>
+            <!--            <br>-->
+            <md-input-container>
+                <label>Get short url here</label>
+                <input id="srtUrl" ng-model="shortestUrl" value="{{shortestUrl}}" ngclipboard type="text" size="100" />
+                <md-tooltip md-direction="right">
+                    Your short url
+                </md-tooltip>
+            </md-input-container>
+            <section layout="row" layout-sm="column" layout-align="center center">
+                <md-button class="md-raised" ngclipboard data-clipboard-target="#srtUrl" ng-click="copyAlert($event);">
+                    Copy
+                </md-button>
+                <md-button class="md-raised md-primary" ng-href="{{shortestUrl}}">Test</md-button>
+            </section>
+        </div>
+    </md-content>
+
+    <!--    <input value="{{longUrl}}" type="text" placeholder="Enter compelte url here..." /><br><br>-->
+    <!--    <input type="button" value="Get Short Url" ng-click="getShortUrl()" hidden/><br>-->
+
+    <!--
+    <md-input-container>
+    </md-input-container>
+    <br>
+    <br>
+-->
+</div>
